@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Book Connect</title>
-
     <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png">
@@ -16,19 +14,13 @@
     <meta name="msapplication-TileColor" content="#0a0a14">
     <meta name="msapplication-config" content="/meta/browserconfig.xml">
     <meta name="theme-color" content="#0a0a14">
-
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="./header-component.js"></script>
-    <script type="module" src="./search-filter.js"></script>
-    <script type="module" src=".bookp-review.js"></script>
-    <script type="module" src="./theme-toggler.js"></script>
     <script type="module" src="./scripts.js"></script>
     <script type="module" src="./data.js"></script>
   </head>
@@ -94,10 +86,17 @@
     </header>
 
     <main class="list">
+
+       <!-- Web Components -->
+      <book-search></book-search>
       <book-preview></book-preview>
+      <book-list></book-list>
+      <book-details></book-details>
+      <theme-settings></theme-settings>
       <div class="list__items" data-list-items></div>
       <div class="list__message" data-list-message>No results found. Your filters might be too narrow.</div>
       <button class="list__button" data-list-button></button>
+
     </main>
 
 
@@ -163,5 +162,12 @@
     </dialog>
    
     <div class="backdrop"></div>
+
+    
+    <script type="module" src="./header-component.js"></script>
+    <script type="module" src="./search-filter.js"></script>
+    <script type="module" src="./book-preview.js"></script>
+    <script type="module" src="./theme-toggler.js"></script>
+   
   </body>
 </html>
