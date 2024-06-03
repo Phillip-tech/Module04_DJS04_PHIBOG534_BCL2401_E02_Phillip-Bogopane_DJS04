@@ -11,6 +11,7 @@ import {
 import "./book-preview.js";
 import "./search-filter.js";
 import "./theme-toggler.js";
+import "./header-component.js";
 
 // Initialize page number and matches array
 let page = 1;

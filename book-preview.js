@@ -1,6 +1,11 @@
-import { authors } from "./data.js";
+import { authors } from '../data.js';
 
 class BookPreview extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     this.render();
   }
@@ -8,12 +13,16 @@ class BookPreview extends HTMLElement {
   render() {
     const { author, id, image, title } = this.dataset;
     const authorName = authors[author]; // Fetch the author's name using the ID
-
-    this.innerHTML = `
+    
+    this.shadowRoot.innerHTML = `
       <style>
         .preview {
           display: flex;
           align-items: center;
+          border: none;
+          background: none;
+          cursor: pointer;
+          text-align: left;
         }
         .preview__image {
           width: 50px;
@@ -26,6 +35,7 @@ class BookPreview extends HTMLElement {
         }
         .preview__title {
           font-size: 1.2em;
+          margin: 0;
         }
         .preview__author {
           font-size: 1em;
@@ -43,4 +53,4 @@ class BookPreview extends HTMLElement {
   }
 }
 
-customElements.define("book-preview", BookPreview);
+customElements.define('book-preview', BookPreview);
